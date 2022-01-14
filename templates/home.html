@@ -2,9 +2,18 @@
 
 {% block content %}
 <h1>Notes</h1>
+
+<div class="note-list">
   <!-- [(1, 'title', 'content'),  ()   ] -->
   {%for note in notes %}
-    <h3>{{note[1]}}</h3>
+    <a href="#" >
+      <div class="note-item"> 
+        <p class="note-item-title"> {{note[1]}} </p> 
+        <p class="note-item-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aspernatur,
+           molestias consectetur ipsa sit aut corporis laborum quaerat nisi veniam?</p>
+      </div>
+    </a>
   {% endfor %}
+</div>
 
 {% endblock %}
