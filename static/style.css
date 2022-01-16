@@ -125,3 +125,17 @@ textarea.input {
 .btn:active {
   transform: translateY(3px);
 }
+
+.btn.delete {
+  background-color: rgb(220, 20, 60);
+}
+
+.note-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.note-content {
+  white-space: pre-wrap;
+}
