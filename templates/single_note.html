@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- note title -->
+<h1>{{note[1]}}</h1>
+
+<div>
+  <a class="btn" href="/notes/edit/{{note[0]}}">Edit</a>
+  <a class="btn" href="/notes/delete/{{note[0]}}">Delete</a>
+</div>
+<div class="" style="margin-top: 0.5rem;"> 
+  <p class="">{{note[2]}}</p>
+</div>
+
+{% endblock %}
