@@ -2,15 +2,13 @@
 
 {% block content %}
 <!-- note title -->
-<h1>{{note[1]}}</h1>
+<h1>{{note.title}}</h1>
 
 <div class="note-actions" > 
-  <a class="btn" style="margin-right: 0.5rem;" href="/notes/edit/{{note[0]}}">Edit</a>
-  <a class="btn delete" href="/notes/delete/{{note[0]}}">Delete</a>
+  <a class="btn" style="margin-right: 0.5rem;" href="/notes/edit/{{note.id}}">Edit</a>
+  <a class="btn delete" href="/notes/delete/{{note.id}}">Delete</a>
 </div>
 
-<div class="note-content" style="margin-top: 0.5rem;"> 
-  <p class="">{{note[2]}}</p>
-</div>
+<div class="note-content" style="margin-top: 1rem;">{{note.content}}</div>
 
 {% endblock %}

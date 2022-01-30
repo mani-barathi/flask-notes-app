@@ -6,9 +6,9 @@
 <div class="note-list">
   <!-- [(1, 'title', 'content'),  ()   ] -->
   {%for note in notes %}
-    <a href="/notes/{{note[0]}}" >
+    <a href="/notes/{{note.id}}" >
       <div class="note-item"> 
-        <p class="note-item-title"> {{note[1]}} </p> 
+        <p class="note-item-title"> {{note.title}} </p> 
         <p class="note-item-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum aspernatur,
            molestias consectetur ipsa sit aut corporis laborum quaerat nisi veniam?</p>
       </div>
