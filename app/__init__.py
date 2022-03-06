@@ -10,9 +10,9 @@ login_manager.login_view = 'auth.login_page'
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-    # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1234@localhost:5432/flask_notes'
-    app.config['SECRET_KEY'] = 'omawosfd23nkjasndfwasdf'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1234@localhost:5432/flask_notes'
+    app.config['SECRET_KEY'] = 'wesdfdfasdfad'
 
     from .models import Note, User
 
