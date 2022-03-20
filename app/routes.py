@@ -1,6 +1,7 @@
 from flask import render_template, redirect, request, Blueprint
 from .models import Note
 from . import db
+from flask_login import current_user, login_required
 # from app.models import Note
 # from app import db
 
@@ -8,6 +9,7 @@ notes = Blueprint('notes', __name__)
 
 
 @notes.route("/")
+@login_required
 def home_page():
     # res = cursor.execute( 'select id, title  from notes order by updated_at desc')
     # notes = res.fetchall()
@@ -20,6 +22,7 @@ def home_page():
 
 
 @notes.route("/create", methods=['GET', 'POST'])
+@login_required
 def create_note_page():
     if request.method == 'GET':
         return render_template('create.html')
@@ -36,6 +39,7 @@ def create_note_page():
 
 
 @notes.route('/notes/<note_id>')
+@login_required
 def single_note_page(note_id):
     # res = cursor.execute('select * from notes where id=?', (note_id,))
     # note = res.fetchone()
@@ -45,6 +49,7 @@ def single_note_page(note_id):
 
 
 @notes.route('/notes/edit/<note_id>', methods=['GET', 'POST'])
+@login_required
 def edit_note_page(note_id):
     if request.method == 'GET':
         # res = cursor.execute('select * from notes where id=?', (note_id,))
@@ -65,6 +70,7 @@ def edit_note_page(note_id):
 
 
 @notes.route('/notes/delete/<note_id>')
+@login_required
 def delete_note_page(note_id):
     # cursor.execute('delete from notes where id=?', (note_id,))
     # con.commit()

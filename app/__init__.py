@@ -19,6 +19,8 @@ def create_app():
     db.init_app(app)
     db.create_all(app=app)
 
+    login_manager.init_app(app)
+
     from .routes import notes
     from .auth_routes import auth
     app.register_blueprint(notes)
