@@ -12,6 +12,7 @@ class Note(db.Model):
     title = db.Column(db.String(250))
     content = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=func.now())
+    user_id = db.Column(db.Integer,db.ForeignKey('user.id'),nullable=False )
 
 
 class User(db.Model, UserMixin):
@@ -19,4 +20,5 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(250))
     email = db.Column(db.Text)
     password = db.Column(db.Text)
+    notes = db.relationship('Note',backref="notes", lazy=True)
 
